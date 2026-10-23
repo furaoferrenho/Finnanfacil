@@ -1,3 +1,14 @@
-#titulopr {
+:root {
+--cor-de-fundo : white;
+--cor-de-texto : black;
+}
 
+body{
+ display:block;
+ background:var(--cor-de-fundo);
+ color: var(--cor-de-texto);
+}
+.titulopr {
+aling-content: center;
+aling-text: center;
 }
