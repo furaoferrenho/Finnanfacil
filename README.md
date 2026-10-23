@@ -8,4 +8,4 @@ trabalho realizado como componente essencial para a obtenção do diploma de niv
 * objetivo: 
 criar uma planilha para empresas MEI é ajudar com ajustes de orçamento é gestão, agindo como ferramenta de gestão
 
-* versão prototipo marçaões não adicionadas
+
