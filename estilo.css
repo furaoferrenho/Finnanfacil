@@ -1,14 +1,21 @@
 :root {
 --cor-de-fundo : white;
 --cor-de-texto : black;
+--tamanho-padrao : 24pt;
 }
 
 body{
  display:block;
- background:var(--cor-de-fundo);
+ background-color:var(--cor-de-fundo);
  color: var(--cor-de-texto);
+ font-size:var(--tamanho-padrao);
+ size:var(--tamanho-padrao);
 }
 .titulopr {
 aling-content: center;
 aling-text: center;
+}
+.confirmar:hover {
+ color: black;
+ background-color: green;
 }
