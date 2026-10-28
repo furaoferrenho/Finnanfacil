@@ -13,11 +13,11 @@
 		<p><textarea id="relatorio-info"> informações do relatorio </textarea>
 		<p>ativos totais: <input type="number" id="ativos">
 		<p>passivos totais: <input type="number" id="passivos">
-
-		<p><input type="reset" value="reset" class="confirmar"> <button onclick="enviar_fr()"class="confirmar"> enviar </button>
+		<!-- fim da prancheta --!>
+		<p><button onclick="reset()"> reset </button> <button onclick="enviar_fr()"class="confirmar"> enviar </button>
 		<dialog id="alerta" open>
 			relatorio:<p>
-			<iframe src = "./README.md"> erro de verção</iframe>
+			<iframe src = "./README.md" width="90%" hight="70%" margin="2pt"> erro de verção</iframe>
 
 			<p><button onclick="fechar()"> fechar</button></p>
 		</dialog>

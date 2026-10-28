@@ -2,6 +2,7 @@
 --cor-de-fundo : white;
 --cor-de-texto : black;
 --tamanho-padrao : 24pt;
+--tamanho-relativo : 10pt;
 }
 
 body{
@@ -9,13 +10,32 @@ body{
  background-color:var(--cor-de-fundo);
  color: var(--cor-de-texto);
  font-size:var(--tamanho-padrao);
- size:var(--tamanho-padrao);
+ 
+}
+
+button{
+ transform:scale(2);
+ margin:var(--tamanho-padrao);
+}
+input{
+ width:50%;
+ hight:20%;
+ font-size:var(--tamanho-relativo);
 }
 .titulopr {
-aling-content: center;
 aling-text: center;
 }
 .confirmar:hover {
  color: black;
  background-color: green;
+}
+
+#relatorio-info {
+ width:70%;
+ hight:40%;
+ font-size:var(--tamanho-padrao);
+}
+#alerta {
+ width:70%;
+ hight:70%;
 }
