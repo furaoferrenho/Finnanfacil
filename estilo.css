@@ -40,7 +40,7 @@ aling-text: center;
  font-size:var(--tamanho-padrao);
 }
 #alerta {
- top:10%;
+ top:20%;
  width:70%;
  hight:70%;
 }
