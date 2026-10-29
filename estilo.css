@@ -5,6 +5,7 @@
 --tamanho-padrao : 20pt;
 --tamanho-relativo : 10pt;
 --escala: 2;
+--porcentagem: 10%;
 }
 
 body{
@@ -12,7 +13,7 @@ body{
  background-color:var(--cor-de-fundo);
  color: var(--cor-de-texto);
  font-size:var(--tamanho-padrao);
- 
+ margin: var(--porcentagem);
 }
 
 
@@ -27,7 +28,8 @@ input{
 }
 
 .titulopr {
-aling-text: center;
+	display:flex;
+	justify-content: center;
 }
 .confirmar:hover {
  color: black;
@@ -43,4 +45,14 @@ aling-text: center;
  top:20%;
  width:70%;
  hight:70%;
+}
+
+#areadeenvio {
+	display: flex;
+	aling-items: center;
+	justify-content: center;
+	hight : var(--porcentagem);
+	bottom:var(--porcentagem);
+	background-color: rgba(0, 0, 0, 0.48);
+	padding:var(--tamanho-padrao)*7;
 }

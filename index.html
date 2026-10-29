@@ -5,25 +5,31 @@
 
 		<title id="titulo"> Prototipo finnanfacil </title>
 		<script src="font.js"></script>
+		<script src="adicionais.js"></script>
 		<link rel="stylesheet" type="text/css" href="estilo.css">
 		<style src="estilo.css"></style>
 	</head>
 	<body>
 		<p> <h1 class="titulopr"> Prancheta finnanfacil </h1>
 		<p> nome da empresa: <input type="text">
-		<p><textarea id="relatorio-info"> informações do relatorio </textarea>
+		<p><textarea id="relatorio-info"> dados do relatorio </textarea>
 		<p>ativos totais:
-		<p><input type="number" id="ativos">
+		<p><input type="number" id="ativos">Rs
 		<p>passivos totais:
-		<p><input type="number" id="passivos">
-		<p>lucro bruto : <input type="number" id="lucro-bruto">
+		<p><input type="number" id="passivos">Rs
+		<p>lucro bruto : 
+		<p><input type="number" id="lucro-bruto">Rs
 		<!-- fim da prancheta --!>
-		<p><button onclick="reset()"> reset </button> <button onclick="enviar_fr()"class="confirmar"> enviar </button>
+		<div id="areadeenvio">
+		<p><button onclick="reset()" class="confirmar"> reset </button> <button onclick="enviar_fr()"class="confirmar"> enviar </button></div>
 		<dialog id="alerta" open>
 			relatorio:<p>
 			<iframe src = "./README.md" width="90%" hight="70%" margin="2pt"> erro de verção</iframe>
 
 			<p><button onclick="fechar()"> fechar</button></p>
+		</dialog>
+		<dialog id="configs">
+			incompleto
 		</dialog>
 
 	</body>
