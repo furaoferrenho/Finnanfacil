@@ -1,8 +1,10 @@
+
 :root {
 --cor-de-fundo : white;
 --cor-de-texto : black;
---tamanho-padrao : 24pt;
+--tamanho-padrao : 20pt;
 --tamanho-relativo : 10pt;
+--escala: 2;
 }
 
 body{
@@ -13,8 +15,9 @@ body{
  
 }
 
+
 button{
- transform:scale(2);
+ transform:scale(var(--escala));
  margin:var(--tamanho-padrao);
 }
 input{
@@ -22,6 +25,7 @@ input{
  hight:20%;
  font-size:var(--tamanho-relativo);
 }
+
 .titulopr {
 aling-text: center;
 }
@@ -36,6 +40,7 @@ aling-text: center;
  font-size:var(--tamanho-padrao);
 }
 #alerta {
+ top:10%;
  width:70%;
  hight:70%;
 }
