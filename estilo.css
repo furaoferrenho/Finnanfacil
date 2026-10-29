@@ -2,10 +2,11 @@
 :root {
 --cor-de-fundo : white;
 --cor-de-texto : black;
---tamanho-padrao : 20pt;
---tamanho-relativo : 10pt;
+--tamanho-padrao : 18pt;
+--tamanho-relativo : 8pt;
 --escala: 2;
 --porcentagem: 10%;
+--fixo: fixed;
 }
 
 body{
@@ -32,13 +33,14 @@ input{
 	justify-content: center;
 }
 .confirmar:hover {
- color: black;
+ color: var(--cor-de-texto);
  background-color: green;
 }
 
+
 #relatorio-info {
- width:70%;
- hight:40%;
+ width:80%;
+ hight:50%;
  font-size:var(--tamanho-padrao);
 }
 #alerta {
