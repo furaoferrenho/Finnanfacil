@@ -1,8 +1,12 @@
+
 :root {
 --cor-de-fundo : white;
 --cor-de-texto : black;
---tamanho-padrao : 24pt;
---tamanho-relativo : 10pt;
+--tamanho-padrao : 18pt;
+--tamanho-relativo : 8pt;
+--escala: 2;
+--porcentagem: 10%;
+--fixo: fixed;
 }
 
 body{
@@ -10,32 +14,52 @@ body{
  background-color:var(--cor-de-fundo);
  color: var(--cor-de-texto);
  font-size:var(--tamanho-padrao);
- 
+ margin: var(--porcentagem);
 }
 
+
 button{
- transform:scale(2);
+ transform:scale(var(--escala));
  margin:var(--tamanho-padrao);
 }
 input{
  width:50%;
- hight:20%;
+ height:20%;
  font-size:var(--tamanho-relativo);
 }
+
+table, th, td {
+	word-spacing: var(--tamanho-relativo);
+  border:1pt solid var(--cor-de-texto);
+}
+
 .titulopr {
-aling-text: center;
+	display:flex;
+	justify-content: center;
 }
 .confirmar:hover {
- color: black;
+ color: var(--cor-de-texto);
  background-color: green;
 }
 
+
 #relatorio-info {
- width:70%;
- hight:40%;
+ width:80%;
+ height:50%;
  font-size:var(--tamanho-padrao);
 }
 #alerta {
+ top:20%;
  width:70%;
- hight:70%;
+ height:40%;
+}
+
+#areadeenvio {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height : var(--porcentagem);
+	bottom:var(--porcentagem);
+	background-color: rgba(0, 0, 0, 0.48);
+	padding:var(--tamanho-padrao)*7;
 }

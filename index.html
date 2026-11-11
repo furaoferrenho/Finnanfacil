@@ -1,26 +1,47 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8">
+		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+
 		<title id="titulo"> Prototipo finnanfacil </title>
 		<script src="font.js"></script>
+		<script src="adicionais.js"></script>
 		<link rel="stylesheet" type="text/css" href="estilo.css">
 		<style src="estilo.css"></style>
 	</head>
 	<body>
 		<p> <h1 class="titulopr"> Prancheta finnanfacil </h1>
-		<p> nome da empresa: <input type="text">
-		<p><textarea id="relatorio-info"> informações do relatorio </textarea>
-		<p>ativos totais: <input type="number" id="ativos">
-		<p>passivos totais: <input type="number" id="passivos">
+		<p> nome da empresa: <input type="text" id="nomeEmpresa">
+		<p><textarea id="relatorioInfo"> dados do relatorio </textarea>
+		<p>ativos totais:
+		<p><input type="number" id="ativos"> R$
+		<p>passivos totais:
+		<p><input type="number" id="passivos"> R$
+		<p>lucro bruto : 
+		<p><input type="number" id="lucroBruto"> R$
+		<p> metas semanais:
+		<p><input type="number" id="metaSemnalDeVendas"> R$/S
+		<p> margem de vendas:
+		<p> <input type="number" id="margemVendasSemanal"> %
+		<p>gastos da empresa:
+		<p> <input type="number" id="gastoEmpresa"> R$
 		<!-- fim da prancheta --!>
-		<p><button onclick="reset()"> reset </button> <button onclick="enviar_fr()"class="confirmar"> enviar </button>
-		<!-- botões de envio é recusa --!>
+		<div id="areadeenvio">
+		<p><button onclick="reset()" class="confirmar"> reset </button> <button onclick="enviar_fr()"class="confirmar"> enviar </button></div>
+		<div id="final">
+		</div>
+
 		<dialog id="alerta" open>
 			relatorio:<p>
 			<iframe src = "./README.md" width="90%" hight="70%" margin="2pt"> erro de verção</iframe>
 
-			<p><button onclick="fechar()"> fechar</button></p>
+			<p><button onclick="document.getElementById('alerta').close()"> fechar</button></p>
+
+
+		</dialog>
+		<dialog id="configs">
+			incompleto
+			<!-- edições futuras poderam alterar o estilo da pagina nativamente --!>
 		</dialog>
 
 	</body>
