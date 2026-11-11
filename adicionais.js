@@ -81,3 +81,4 @@ function enviar_fr() {
     alert(JSON.stringify(analise, null, 2));
     alert("funfa");
 }
+alert("up");
