@@ -1,4 +1,3 @@
-
 function analisarSaudeFinaceira(dados) {
     const {
         lucroBruto,
@@ -33,10 +32,10 @@ function analisarSaudeFinaceira(dados) {
     const icdiv = dividendosEstimados > 0 ? lucroLiquidoEstimado / dividendosEstimados : (lucroLiquidoEstimado > 0 ? 999 : 0);
 
     // 4. Cobertura de Dívidas (ICD) = Lucro Bruto / Passivo Total
-const icd = passivos > 0 ? lucroBruto / passivos : 0;
+    const icd = passivos > 0 ? lucroBruto / passivos : 0;
 
     // 5. Liquidez Imediata (ILM) = Disponível / Passivo Circulante
-const ilm = passivoCirculante > 0 ? disponivel / passivoCirculante : 0;
+    const ilm = passivoCirculante > 0 ? disponivel / passivoCirculante : 0;
 
     // 6. Liquidez Seca (ILS) = (Ativo Circulante - Estoques) / Passivo Circulante
     const ils = passivoCirculante > 0 ? (ativoCirculante - estoques) / passivoCirculante : 0;
@@ -68,20 +67,17 @@ const ilm = passivoCirculante > 0 ? disponivel / passivoCirculante : 0;
     };
 }
 
-function enviar_fr(){
-const EmpresaExemplo = {
-	lucroBtruto: document.getElementById("lucroBruto");
-	ativos: document.getElementById("ativos");
-	passivos: document.getElementById("passivos");
-	margemVendasSemanal: document.getElementById("margemVendasSemanal") / 100;
-	metaSemanalVendas: document.getElementById("metaSemanalVendas");
-	gastosEmpresa: document.getElementById("gastoEmpresa");
-};
+function enviar_fr() {
+    const EmpresaExemplo = {
+        lucroBruto: Number(document.getElementById("lucroBruto").value) || 0,
+        ativos: Number(document.getElementById("ativos").value) || 0,
+        passivos: Number(document.getElementById("passivos").value) || 0,
+        margemVendasSemanal: (Number(document.getElementById("margemVendasSemanal").value) || 0) / 100,
+        metaSemanalVendas: Number(document.getElementById("metaSemanalVendas").value) || 0,
+        gastosEmpresa: Number(document.getElementById("gastosEmpresa").value) || 0
+    };
 
-function enviar_fr(){
-const analise = analisarSaudeFinaceira(EmpresaExemplo);
-alert(analise);
-alert("funfa");
-};
-//table(relatorio);
-
+    const analise = analisarSaudeFinaceira(EmpresaExemplo);
+    alert(JSON.stringify(analise, null, 2));
+    alert("funfa");
+}
