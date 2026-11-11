@@ -68,7 +68,7 @@ function enviar_fr() {
     // Exibe o resultado de forma legível
     let mensagem = "=== RESULTADO DA ANÁLISE ===\n\n";
     for (let [indicador, dados] of Object.entries(analise)) {
-        mensagem += `${indicador}: ${dados.valor} [Status: ${dados.status}]\n`;
+        mensagem += `<tr><th>${indicador}: ${dados.valor}</th><th> [Status: ${dados.status}]</th></tr>\n`;
     }
     
     alert(mensagem);
