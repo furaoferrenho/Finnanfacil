@@ -8,7 +8,6 @@ function analisarSaudeFinaceira(dados) {
         gastosEmpresa
     } = dados;
 
-    // 1. Estimativas de Contas Patrimoniais (Proporções padrão ajustáveis)
     const ativoCirculante = ativos * 0.50;      // 50% do ativo total
     const passivoCirculante = passivos * 0.60;   // 60% do passivo total
     const passivoNaoCirculante = passivos * 0.40; // 40% do passivo total
@@ -16,7 +15,6 @@ function analisarSaudeFinaceira(dados) {
     const disponivel = ativoCirculante * 0.20;   // 20% do ativo circulante (caixa/equivalentes)
     const realizavelLongoPrazo = (ativos * 0.50) * 0.5; // Metade do ativo não circulante
 
-    // Resultado líquido estimado para cálculos de cobertura
     const lucroLiquidoEstimado = lucroBruto - gastosEmpresa;
     const dividendosEstimados = Math.max(0, lucroLiquidoEstimado * 0.25); // Ex: 25% do lucro líquido para dividendos
 
@@ -53,7 +51,6 @@ function analisarSaudeFinaceira(dados) {
 }
 
 function enviar_fr() {
-    // Coleta os valores usando exatamente os IDs presentes no seu HTML
     const EmpresaExemplo = {
         lucroBruto: Number(document.getElementById("lucroBruto").value) || 0,
         ativos: Number(document.getElementById("ativos").value) || 0,
@@ -64,15 +61,19 @@ function enviar_fr() {
     };
 
     const analise = analisarSaudeFinaceira(EmpresaExemplo);
-    
+    const nomeEmpresa = document.getElementById("nomeEmpresa").textContent;
+    const relatorio = document.getElementById("relatorioInfo").textContent;
+
     // Exibe o resultado de forma legível
-    let mensagem = "=== RESULTADO DA ANÁLISE ===\n\n";
+    let mensagem = "=== RESULTADO DA ANÁLISE === <table><th> indicador</th><th>estado</th><th>status</th>";
     for (let [indicador, dados] of Object.entries(analise)) {
-        mensagem += `<tr><th>${indicador}: ${dados.valor}</th><th> [Status: ${dados.status}]</th></tr>\n`;
+        mensagem += `<tr><td>${indicador}</td><td>${dados.valor}</td><td> ${dados.status}</td></tr>`;
     }
+    document.getElementById("final").innerHTML = mensagem;
     
-    alert(mensagem);
-	document.getElementById("final").innerText = mensagem;
+    mensagem += `</table>`
+	
+    document.getElementById("final").innerHTML = `<p> Relatorio ${nomeEmpresa} data ${dataDia}</p><pre> ${relatorio}</pre>`;
 }
 
 function reset() {

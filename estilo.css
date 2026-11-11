@@ -24,8 +24,13 @@ button{
 }
 input{
  width:50%;
- hight:20%;
+ height:20%;
  font-size:var(--tamanho-relativo);
+}
+
+table, th, td {
+	word-spacing: var(--tamanho-relativo);
+  border:1pt solid var(--cor-de-texto);
 }
 
 .titulopr {
@@ -40,20 +45,20 @@ input{
 
 #relatorio-info {
  width:80%;
- hight:50%;
+ height:50%;
  font-size:var(--tamanho-padrao);
 }
 #alerta {
  top:20%;
  width:70%;
- hight:70%;
+ height:40%;
 }
 
 #areadeenvio {
 	display: flex;
-	aling-items: center;
+	align-items: center;
 	justify-content: center;
-	hight : var(--porcentagem);
+	height : var(--porcentagem);
 	bottom:var(--porcentagem);
 	background-color: rgba(0, 0, 0, 0.48);
 	padding:var(--tamanho-padrao)*7;
