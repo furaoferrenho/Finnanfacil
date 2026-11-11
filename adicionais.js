@@ -4,7 +4,7 @@ function analisarSaudeFinaceira(dados) {
         lucroBruto,
         ativos,
         passivos,
-        margemVendasSemanal, // Ex: 0.20 para 20%
+        margemVendasSemanal,
         metaSemanalVendas,
         gastosEmpresa
     } = dados;
@@ -68,20 +68,20 @@ const ilm = passivoCirculante > 0 ? disponivel / passivoCirculante : 0;
     };
 }
 
-// ==========================================
-// EXEMPLO DE USO:
-// ==========================================
-/**
-const empresaExemplo = {
-    lucroBruto: 150000,
-    ativos: 500000,
-    passivos: 250000,
-    margemVendasSemanal: 0.25, // 25%
-    metaSemanalVendas: 40000,
-    gastosEmpresa: 90000
+function enviar_fr(){
+const EmpresaExemplo = {
+	lucroBtruto: document.getElementById("lucroBruto");
+	ativos: document.getElementById("ativos");
+	passivos: document.getElementById("passivos");
+	margemVendasSemanal: document.getElementById("margemVendasSemanal") / 100;
+	metaSemanalVendas: document.getElementById("metaSemanalVendas");
+	gastosEmpresa: document.getElementById("gastoEmpresa");
 };
-**/
 
-const relatorio = analisarSaudeFinaceira(empresaExemplo);
-console.log("Relatório de Indicadores Financeiros:");
-console.table(relatorio);
+function enviar_fr(){
+const analise = analisarSaudeFinaceira(EmpresaExemplo);
+alert(analise);
+alert("funfa");
+};
+//table(relatorio);
+

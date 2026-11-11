@@ -12,13 +12,19 @@
 	<body>
 		<p> <h1 class="titulopr"> Prancheta finnanfacil </h1>
 		<p> nome da empresa: <input type="text">
-		<p><textarea id="relatorio-info"> dados do relatorio </textarea>
+		<p><textarea id="relatorioInfo"> dados do relatorio </textarea>
 		<p>ativos totais:
-		<p><input type="number" id="ativos">Rs
+		<p><input type="number" id="ativos"> R$
 		<p>passivos totais:
-		<p><input type="number" id="passivos">Rs
+		<p><input type="number" id="passivos"> R$
 		<p>lucro bruto : 
-		<p><input type="number" id="lucro-bruto">Rs
+		<p><input type="number" id="lucroBruto"> R$
+		<p> metas semanais:
+		<p><input type="number" id="metaSemnalDeVendas"> R$/S
+		<p> margem de vendas:
+		<p> <input type="number" id="margemVendasSemanal"> %
+		<p>gastos da empresa:
+		<p> <input type="number" id="gastoEmpresa"> R$
 		<!-- fim da prancheta --!>
 		<div id="areadeenvio">
 		<p><button onclick="reset()" class="confirmar"> reset </button> <button onclick="enviar_fr()"class="confirmar"> enviar </button></div>
@@ -26,7 +32,9 @@
 			relatorio:<p>
 			<iframe src = "./README.md" width="90%" hight="70%" margin="2pt"> erro de verção</iframe>
 
-			<p><button onclick="fechar()"> fechar</button></p>
+			<p><button onclick="document.getElementById('alerta').close()"> fechar</button></p>
+
+
 		</dialog>
 		<dialog id="configs">
 			incompleto
