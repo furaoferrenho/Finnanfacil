@@ -22,28 +22,13 @@ function analisarSaudeFinaceira(dados) {
 
     // --- CÁLCULOS DOS INDICADORES ---
 
-    // 1. Suficiência Total / Índice de Suficiência Financeira (ISF) - Capacidade geral de cobertura patrimonial
     const isf = passivos > 0 ? ativos / passivos : 0;
-
-    // 2. Cobertura de Dívidas de Longo Prazo (ICDLP) = Lucro / Passivo Não Circulante
     const icdlp = passivoNaoCirculante > 0 ? lucroBruto / passivoNaoCirculante : 0;
-
-    // 3. Cobertura de Dividendos (ICDIV) = Lucro Líquido / Dividendos Estimados
     const icdiv = dividendosEstimados > 0 ? lucroLiquidoEstimado / dividendosEstimados : (lucroLiquidoEstimado > 0 ? 999 : 0);
-
-    // 4. Cobertura de Dívidas (ICD) = Lucro Bruto / Passivo Total
     const icd = passivos > 0 ? lucroBruto / passivos : 0;
-
-    // 5. Liquidez Imediata (ILM) = Disponível / Passivo Circulante
     const ilm = passivoCirculante > 0 ? disponivel / passivoCirculante : 0;
-
-    // 6. Liquidez Seca (ILS) = (Ativo Circulante - Estoques) / Passivo Circulante
     const ils = passivoCirculante > 0 ? (ativoCirculante - estoques) / passivoCirculante : 0;
-
-    // 7. Liquidez Corrente (ILC) = Ativo Circulante / Passivo Circulante
     const ilc = passivoCirculante > 0 ? ativoCirculante / passivoCirculante : 0;
-
-    // 8. Liquidez Geral (ILG) = (Ativo Circulante + Realizável a Longo Prazo) / (Passivo Circulante + Passivo Não Circulante)
     const denominadorLG = passivoCirculante + passivoNaoCirculante;
     const ilg = denominadorLG > 0 ? (ativoCirculante + realizavelLongoPrazo) / denominadorLG : 0;
 
@@ -68,17 +53,37 @@ function analisarSaudeFinaceira(dados) {
 }
 
 function enviar_fr() {
+    // Coleta os valores usando exatamente os IDs presentes no seu HTML
     const EmpresaExemplo = {
         lucroBruto: Number(document.getElementById("lucroBruto").value) || 0,
         ativos: Number(document.getElementById("ativos").value) || 0,
         passivos: Number(document.getElementById("passivos").value) || 0,
         margemVendasSemanal: (Number(document.getElementById("margemVendasSemanal").value) || 0) / 100,
-        metaSemanalVendas: Number(document.getElementById("metaSemanalVendas").value) || 0,
-        gastosEmpresa: Number(document.getElementById("gastosEmpresa").value) || 0
+        metaSemanalVendas: Number(document.getElementById("metaSemnalDeVendas").value) || 0,
+        gastosEmpresa: Number(document.getElementById("gastoEmpresa").value) || 0
     };
 
     const analise = analisarSaudeFinaceira(EmpresaExemplo);
-    alert(JSON.stringify(analise, null, 2));
-    alert("funfa");
+    
+    // Exibe o resultado de forma legível
+    let mensagem = "=== RESULTADO DA ANÁLISE ===\n\n";
+    for (let [indicador, dados] of Object.entries(analise)) {
+        mensagem += `${indicador}: ${dados.valor} [Status: ${dados.status}]\n`;
+    }
+    
+    alert(mensagem);
+	document.getElementById("final").innerText = mensagem;
 }
-alert("up");
+
+function reset() {
+const input = confirm("ao confirar apagara todos os dados enviados");
+    if(input){
+    document.getElementById("ativos").value = "";
+    document.getElementById("passivos").value = "";
+    document.getElementById("lucroBruto").value = "";
+    document.getElementById("metaSemnalDeVendas").value = "";
+    document.getElementById("margemVendasSemanal").value = "";
+    document.getElementById("gastoEmpresa").value = "";
+    document.getElementById("relatorioInfo").value = "dados do relatorio";}
+}
+

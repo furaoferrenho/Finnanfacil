@@ -17,11 +17,6 @@ dialogo.querySelector("div").innerText= version;
 
 
 
-function reset(){
-const input = confirm("ao confirar apagara todos os dados enviados");
-if(input){
-window.location.reload();
-}
-};
+
 
 
