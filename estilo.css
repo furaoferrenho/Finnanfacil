@@ -29,6 +29,9 @@ input{
 }
 
 table, th, td {
+	transform:scale(var(--escala));
+	display:flex;
+	justify-content:center;
 	word-spacing: var(--tamanho-relativo);
   border:1pt solid var(--cor-de-texto);
 }

@@ -65,7 +65,7 @@ function enviar_fr() {
     const relatorio = document.getElementById("relatorioInfo").textContent;
 
     // Exibe o resultado de forma legível
-    let mensagem = "=== RESULTADO DA ANÁLISE === <table><th> indicador</th><th>estado</th><th>status</th>";
+    let mensagem = "<h1>RESULTADO DA ANÁLISE</h1><table><th> indicador</th><th>estado</th><th>status</th>";
     for (let [indicador, dados] of Object.entries(analise)) {
         mensagem += `<tr><td>${indicador}</td><td>${dados.valor}</td><td> ${dados.status}</td></tr>`;
     }
@@ -73,7 +73,7 @@ function enviar_fr() {
     
     mensagem += `</table>`
 	
-    document.getElementById("final").innerHTML = `<p> Relatorio ${nomeEmpresa} data ${dataDia}</p><pre> ${relatorio}</pre>`;
+    document.getElementById("RelatorioFinal").innerHTML = `<p> Relatorio ${nomeEmpresa} data ${dataDia}</p><pre> ${relatorio}</pre>`;
 }
 
 function reset() {
