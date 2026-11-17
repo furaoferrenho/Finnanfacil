@@ -9,6 +9,7 @@ criar uma planilha para empresas MEI é ajudar com ajustes de orçamento é gest
 
 * primeiros campos para informaçãoes cruciais para todos os calculos disponiveis na tabela do tcc\
 
+[acesse aqui](https://furaoferrenho.github.io/Finnanfacil/)
 # verção 1.5.0
     * estilo ainda não definido
     * verção 100% funcional
@@ -17,5 +18,7 @@ criar uma planilha para empresas MEI é ajudar com ajustes de orçamento é gest
 # bugs
 
     * nome da empresa não é anexado junto ao relatorio
+
+
 
 
